@@ -40,9 +40,11 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-
-
-            throw new NotImplementedException();
+            if (numbers == null)
+            {  return 0; }
+            if (numbers.Count() == 0)
+            { return 0; }
+            return numbers.Min() + numbers.Max();    
 
         }
 
@@ -63,22 +65,53 @@ namespace ChallengesWithTestsMark8
 
         public int Sum(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            { return 0; }
+            int sum = numbers.Sum();
+            return sum;
+            
         }
 
         public int SumEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null)
+            { return 0 ; }
+
+            int result = 0;
+
+            foreach (int i in numbers)
+            {
+                if (i % 2 == 0)
+                {
+                    result += i;
+                }
+            }
+            return result;
         }
 
         public bool IsSumOdd(List<int> numbers)
-        {
-            throw new NotImplementedException();
+        {   
+            if (numbers == null)
+            { return false; }
+            bool oddCheck = (numbers.Sum() % 2 != 0)? true : false;
+            return oddCheck;
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            if (number == null) { return 0; }
+            if (number < 0) { return 0; }
+
+            if (number % 2 == 0)
+            {
+                return number / 2;
+            }
+            else  
+            {
+                return ((number - 1) / 2);
+            }
+            
+
         }
     }
 }
